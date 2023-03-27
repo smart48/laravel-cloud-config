@@ -38,19 +38,19 @@ runcmd:
   - mysql -e "FLUSH PRIVILEGES;"
 
   # PHP
-  - apt-get install -y php7.4-fpm php7.4-common php7.4-mysql php7.4-xml php7.4-xmlrpc php7.4-curl php7.4-gd php7.4-imagick php7.4-cli php7.4-dev php7.4-imap php7.4-mbstring php7.4-opcache php7.4-redis php7.4-soap php7.4-zip
-  - perl -p -i -e 's/upload_max_filesize = .*/upload_max_filesize = 64M/g' /etc/php/7.4/fpm/php.ini
-  - perl -p -i -e 's/post_max_size = .*/post_max_size = 64M/g' /etc/php/7.4/fpm/php.ini
-  - perl -p -i -e 's/pm.max_children = .*/pm.max_children = 10/g' /etc/php/7.4/fpm/pool.d/www.conf
-  - perl -p -i -e 's/pm.start_servers = .*/pm.start_servers = 4/g' /etc/php/7.4/fpm/pool.d/www.conf
-  - perl -p -i -e 's/pm.min_spare_servers = .*/pm.min_spare_servers = 2/g' /etc/php/7.4/fpm/pool.d/www.conf
-  - perl -p -i -e 's/pm.max_spare_servers = .*/pm.max_spare_servers = 6/g' /etc/php/7.4/fpm/pool.d/www.conf
-  - perl -p -i -e 's/pm.max_spare_servers = .*/pm.max_spare_servers = 6/g' /etc/php/7.4/fpm/pool.d/www.conf
-  - perl -p -i -e 's/user = .*/user = ubuntu/g' /etc/php/7.4/fpm/pool.d/www.conf
-  - perl -p -i -e 's/group = .*/group = ubuntu/g' /etc/php/7.4/fpm/pool.d/www.conf
-  - perl -p -i -e 's/listen.owner = .*/listen.owner = ubuntu/g' /etc/php/7.4/fpm/pool.d/www.conf
-  - perl -p -i -e 's/listen.group = .*/listen.group = ubuntu/g' /etc/php/7.4/fpm/pool.d/www.conf
-  - service php7.4-fpm restart
+  - apt install php8.1 php-common php-fpm php8.1-mysql php8.1-xml php8.1-xmlrpc php8.1-curl php8.1-gd php8.1-imagick php8.1-cli php8.1-dev php8.1-imap php8.1-mbstring php8.1-opcache php8.1-redis php8.1-soap php8.1-zip
+  - perl -p -i -e 's/upload_max_filesize = .*/upload_max_filesize = 64M/g' /etc/php/8.1/fpm/php.ini
+  - perl -p -i -e 's/post_max_size = .*/post_max_size = 64M/g' /etc/php/8.1/fpm/php.ini
+  - perl -p -i -e 's/pm.max_children = .*/pm.max_children = 10/g' /etc/php/8.1/fpm/pool.d/www.conf
+  - perl -p -i -e 's/pm.start_servers = .*/pm.start_servers = 4/g' /etc/php/8.1/fpm/pool.d/www.conf
+  - perl -p -i -e 's/pm.min_spare_servers = .*/pm.min_spare_servers = 2/g' /etc/php/8.1/fpm/pool.d/www.conf
+  - perl -p -i -e 's/pm.max_spare_servers = .*/pm.max_spare_servers = 6/g' /etc/php/8.1/fpm/pool.d/www.conf
+  - perl -p -i -e 's/pm.max_spare_servers = .*/pm.max_spare_servers = 6/g' /etc/php/8.1/fpm/pool.d/www.conf
+  - perl -p -i -e 's/user = .*/user = ubuntu/g' /etc/php/8.1/fpm/pool.d/www.conf
+  - perl -p -i -e 's/group = .*/group = ubuntu/g' /etc/php/8.1/fpm/pool.d/www.conf
+  - perl -p -i -e 's/listen.owner = .*/listen.owner = ubuntu/g' /etc/php/8.1/fpm/pool.d/www.conf
+  - perl -p -i -e 's/listen.group = .*/listen.group = ubuntu/g' /etc/php/8.1/fpm/pool.d/www.conf
+  - service php8.1-fpm restart
 
   # Nginx
   - apt-get install -y nginx
