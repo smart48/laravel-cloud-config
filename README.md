@@ -3,7 +3,7 @@
 A cloud-config file for local Laravel development. Designed to be used with [Ubuntu Multipass](https://multipass.run). The config sets up a `laravel.test` site with:
 
 * Nginx
-* PHP 7.4
+* PHP 8.1
 * MySQL
 * Redis
 * Composer
