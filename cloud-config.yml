@@ -9,7 +9,7 @@ packages:
 runcmd:
   - add-apt-repository --no-update -y ppa:ondrej/php
   - add-apt-repository --no-update -y ppa:ondrej/nginx
-  - apt-get update -y
+  - apt update -y
 
   # Firewall
   - ufw default deny incoming
@@ -21,7 +21,7 @@ runcmd:
   - ufw enable
 
   # Database
-  - apt-get install -y mysql-server
+  - apt install -y mysql-server
   - perl -p -i -e 's/^bind-address.*/#bind-address = 127.0.0.1/g' /etc/mysql/mysql.conf.d/mysqld.cnf
   - service mysql restart
   - mysql -e "UPDATE mysql.global_priv SET priv=json_set(priv, '$.password_last_changed', UNIX_TIMESTAMP(), '$.plugin', 'mysql_native_password', '$.authentication_string', 'invalid', '$.auth_or', json_array(json_object(), json_object('plugin', 'unix_socket'))) WHERE User='root';"
@@ -53,7 +53,7 @@ runcmd:
   - service php8.1-fpm restart
 
   # Nginx
-  - apt-get install -y nginx
+  - apt install -y nginx
   - rm -rf /etc/nginx
   - git clone https://github.com/gilbitron/laravel-cloud-config.git
   - mv laravel-cloud-config/nginx /etc/nginx
